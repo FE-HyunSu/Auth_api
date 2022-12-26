@@ -14,13 +14,15 @@ app.use(express.json());
 app.use(routes);
 app.use(generalErrorHandler);
 
-app.listen(port, () => {
+app
+  .listen(port, () => {
     console.log(`
     #####################################
     🛡️  Server listening on port: ${port} 🛡️
     #####################################
   `);
-}).on('error', (err) => {
+  })
+  .on('error', (err) => {
     console.error(err);
     process.exit(1);
-});
+  });
